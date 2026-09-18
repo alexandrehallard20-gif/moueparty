@@ -1,0 +1,357 @@
+:root {
+  --bg: #f7f3ee;
+  --panel: rgba(255, 255, 255, 0.7);
+  --primary: #d56f6f;
+  --primary-dark: #a94b4b;
+  --text: #1a1a1a;
+  --muted: #5a5a5a;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  --border: rgba(26, 26, 26, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180deg, #f7f3ee 0%, #f4efe9 100%);
+  color: var(--text);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(17, 17, 17, 0.35), rgba(17, 17, 17, 0.4)),
+    url("./photos/accueil.jpg") center/cover no-repeat;
+  color: white;
+  padding: 24px 5vw 60px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.hero-content h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.96;
+  margin: 12px 0 18px;
+  max-width: 620px;
+}
+
+.subtitle {
+  max-width: 620px;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 24px;
+}
+
+.cta {
+  display: inline-block;
+  background: white;
+  color: var(--text);
+  padding: 15px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 5vw 80px;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  margin: 8px 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1;
+}
+
+.album-section {
+  margin-bottom: 80px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  background: white;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 320px;
+}
+
+.photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.16);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 320px;
+  transition: transform 0.4s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.05);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 18px 18px 16px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
+  color: white;
+}
+
+.photo-overlay h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.photo-overlay p {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  opacity: 0.9;
+}
+
+.moments {
+  margin-bottom: 80px;
+}
+
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.moment-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 28px 22px;
+  box-shadow: var(--shadow);
+}
+
+.moment-card span {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.moment-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+}
+
+.moment-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.about {
+  margin-top: 20px;
+}
+
+.about-box {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  padding: clamp(24px, 4vw, 48px);
+  box-shadow: var(--shadow);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-box h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin: 10px 0 18px;
+}
+
+.about-box p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 1.02rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px 20px 40px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  z-index: 1000;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: min(100%, 1000px);
+  max-height: 80vh;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.close-button {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 12px 18px;
+  text-align: center;
+  color: white;
+}
+
+.lightbox-caption h3 {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+}
+
+.lightbox-caption p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    max-width: 100%;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+}

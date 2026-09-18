@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos Souvenirs de Voyage</title>
+    <meta
+      name="description"
+      content="Album photo numérique de nos souvenirs de voyage ensemble."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <div class="brand">♥ 2 flaps </div>
+        <div class="nav-links">
+          <a href="#album">Album</a>
+          <a href="#moments">Moments</a>
+          <a href="#about">Notre histoire</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <p class="eyebrow">Je ne suis pas très créatif, mais je suis un peu geek, donc je te montre que je n'oublie rien à ma manière</p>
+        <h1> Un tout petit extrait des zamis, des voyages, de nos moments et de nous.</h1>
+        <p class="subtitle">
+          Un album numérique pour garder en mémoire chaque ville, chaque rire,
+          chaque instant partagé.
+        </p>
+        <a href="#album" class="cta">Voir l’album</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="album" class="album-section">
+        <div class="section-heading">
+          <p class="eyebrow">Album photo</p>
+          <h2>Nos plus beaux voyages</h2>
+        </div>
+
+        <div id="photo-grid" class="photo-grid"></div>
+      </section>
+
+      <section id="moments" class="moments">
+        <div class="section-heading">
+          <p class="eyebrow">Nos moments</p>
+          <h2>Des souvenirs qui restent</h2>
+        </div>
+
+        <div class="moments-grid">
+          <div class="moment-card">
+            <span>01</span>
+            <h3>Notre complicité unique</h3>
+            <p>Aucun voyage avec quiconque n'a la même saveur que nos moments. Nous avons entre nous quelque chose de fort</p>
+          </div>
+          <div class="moment-card">
+            <span>02</span>
+            <h3>Le quotidien</h3>
+            <p>Notre quotidien va souvent dans tous les sens. On aime la stabilité mais pas la routine. On ne s'ennuie jamais</p>
+          </div>
+          <div class="moment-card">
+            <span>03</span>
+            <h3>Les petits détails</h3>
+            <p>nos cadeaux, nos jeux vidéos, les paps, les zamis, les voyages, les trajets, les discussions infinies, les analyses, les critiques, les rires. J'aime tout</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about-box">
+          <p class="eyebrow">Notre histoire</p>
+          <h2>Chaque voyage nous a rapprochés un peu plus.</h2>
+          <p>
+            Ce site est un petit coin de mémoire dédié à certaines de nos escapades
+            Nos souvenirs me sont chers, ici, il resteront indéfiniment dans ma mémoire et sur ce site
+            
+          </p>
+          <p>Je suis une sorte de flaps.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Fait avec mon coeur autistique • Nos souvenirs de voyage</p>
+    </footer>
+
+    <div id="lightbox" class="lightbox" aria-label="Vue de la photo">
+      <button id="close-lightbox" class="close-button" aria-label="Fermer">×</button>
+      <img id="lightbox-image" src="" alt="" />
+      <div class="lightbox-caption">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-location"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
