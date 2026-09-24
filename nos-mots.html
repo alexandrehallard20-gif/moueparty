@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos mots • 2 flaps</title>
+    <meta
+      name="description"
+      content="Le petit dictionnaire de nos expressions, de nos private jokes et de nos mots à nous."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .words-page {
+        min-height: 100vh;
+        padding: 24px 5vw 80px;
+        background:
+          radial-gradient(circle at 8% 18%, rgba(213, 111, 111, 0.16), transparent 28%),
+          radial-gradient(circle at 92% 76%, rgba(193, 166, 187, 0.2), transparent 30%),
+          linear-gradient(180deg, #f7f3ee 0%, #f4efe9 100%);
+      }
+
+      .words-nav,
+      .words-header,
+      .words-content {
+        max-width: 1060px;
+        margin-inline: auto;
+      }
+
+      .words-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 72px;
+      }
+
+      .words-nav a:last-child {
+        color: var(--primary-dark);
+        font-weight: 600;
+      }
+
+      .words-header {
+        position: relative;
+        margin-bottom: 42px;
+      }
+
+      .words-header::after {
+        content: "✦";
+        position: absolute;
+        right: 8%;
+        top: 0;
+        color: var(--primary);
+        font-size: 4rem;
+        transform: rotate(12deg);
+      }
+
+      .words-header h1 {
+        max-width: 700px;
+        margin: 12px 0 18px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(4rem, 10vw, 8rem);
+        line-height: 0.82;
+      }
+
+      .words-intro {
+        max-width: 620px;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.8;
+      }
+
+      .words-content {
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid var(--border);
+        border-radius: 30px;
+        padding: clamp(20px, 4vw, 42px);
+        box-shadow: var(--shadow);
+      }
+
+      .words-tools {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 28px;
+      }
+
+      .words-search {
+        width: 100%;
+        border: 1px solid rgba(26, 26, 26, 0.12);
+        border-radius: 999px;
+        padding: 14px 18px;
+        background: rgba(255, 255, 255, 0.82);
+        color: var(--text);
+        font: inherit;
+        outline: none;
+      }
+
+      .words-search:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px rgba(213, 111, 111, 0.12);
+      }
+
+      .words-count {
+        flex: 0 0 auto;
+        color: var(--muted);
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+
+      .words-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .word-card {
+        position: relative;
+        min-height: 185px;
+        padding: 24px 24px 22px;
+        overflow: hidden;
+        border: 1px solid rgba(26, 26, 26, 0.07);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.72);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .word-card::before {
+        content: "“";
+        position: absolute;
+        top: -18px;
+        right: 16px;
+        color: rgba(213, 111, 111, 0.16);
+        font-family: Georgia, serif;
+        font-size: 8rem;
+        line-height: 1;
+      }
+
+      .word-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .word-number {
+        display: block;
+        margin-bottom: 18px;
+        color: var(--primary-dark);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+      }
+
+      .word-card h2 {
+        position: relative;
+        margin: 0 0 10px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .word-card p {
+        position: relative;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .word-empty {
+        grid-column: 1 / -1;
+        padding: 34px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 700px) {
+        .words-nav {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 14px;
+          margin-bottom: 52px;
+        }
+
+        .words-header::after {
+          right: 0;
+          font-size: 3rem;
+        }
+
+        .words-tools {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .words-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="words-page">
+      <nav class="words-nav" aria-label="Navigation principale">
+        <a class="brand" href="index.html">♥ 2 flaps</a>
+        <a href="index.html">← Retour à l'accueil</a>
+      </nav>
+
+      <header class="words-header">
+        <p class="eyebrow">Notre petit dictionnaire</p>
+        <h1>Nos mots</h1>
+        <p class="words-intro">
+          Les expressions qui n'appartiennent qu'à nous. Des mots inventés,
+          des phrases répétées mille fois et tout un langage rempli de souvenirs.
+        </p>
+      </header>
+
+      <section class="words-content" aria-labelledby="words-list-title">
+        <div class="words-tools">
+          <label class="words-search-label" for="words-search" hidden>Rechercher une expression</label>
+          <input id="words-search" class="words-search" type="search" placeholder="Rechercher dans nos mots…" />
+          <span id="words-count" class="words-count" aria-live="polite"></span>
+        </div>
+        <h2 id="words-list-title" hidden>Liste de nos expressions</h2>
+        <div id="words-list" class="words-list"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Fait avec mon cœur autistique • Nos mots</p>
+    </footer>
+
+    <script src="nos-mots.js"></script>
+  </body>
+</html>
