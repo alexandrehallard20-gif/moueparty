@@ -47,9 +47,17 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 18px;
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 10px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
 }
 
 .brand {
@@ -57,10 +65,24 @@ a {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 700;
   letter-spacing: 0.04em;
+  text-align: center;
+  flex: 1;
+}
+
+.top-left-link {
+  display: inline-block;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  opacity: 0.95;
 }
 
 .nav-links {
   display: flex;
+  justify-content: flex-end;
+  flex: 1;
   gap: 24px;
   font-size: 0.95rem;
 }
@@ -334,6 +356,14 @@ main {
   .nav {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .nav-left,
+  .brand,
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex: none;
   }
 
   .nav-links {
